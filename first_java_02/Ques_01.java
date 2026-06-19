@@ -4,7 +4,7 @@ import java.util.*;
 
 // Write a program to print whether a number is even or odd, also take input from the user.
 
-public class EvenOddNum {
+public class Ques_01 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
