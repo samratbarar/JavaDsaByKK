@@ -18,6 +18,8 @@ public class Ques_19 {
            }
        }
        System.out.println("GCD is : "+ n2);
+
+       sc.close();
    }
 }
 
