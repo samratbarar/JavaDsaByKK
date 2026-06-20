@@ -16,5 +16,7 @@ public class Ques_23 {
         } else {
             System.out.println("Given year is not leap year");
         }
+
+        sc.close();
     }
 }
