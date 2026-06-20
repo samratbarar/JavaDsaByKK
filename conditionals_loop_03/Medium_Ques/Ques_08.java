@@ -9,7 +9,7 @@ public class Ques_08 {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter the original value, Depreciation Rate(in %) and time(in years) ");
-        double ogValue = sc.nextInt(), depRate = sc.nextInt(), time = sc.nextInt();
+        double ogValue = sc.nextDouble(), depRate = sc.nextDouble(), time = sc.nextDouble();
 
         System.out.println("The Depreciation Amount is " + (ogValue*depRate*time)/100);
 
