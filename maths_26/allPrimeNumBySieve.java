@@ -9,20 +9,16 @@ public class allPrimeNumBySieve {
         System.out.println("Enter value of n");
         boolean[] primes = new boolean[sc.nextInt() + 1];
 
-        for (int i = 2; i < primes.length; i++) {
-            primes[i] = true;
-        }
-
         for (int i = 2; i * i < primes.length; i++) {
-            if (primes[i]) {
+            if (!primes[i]) {
                 for (int j = i * i; j < primes.length; j += i) {
-                    primes[j] = false;
+                    primes[j] = true;
                 }
             }
         }
 
         for (int i = 2; i < primes.length; i++) {
-            if (primes[i]) {
+            if (!primes[i]) {
                 System.out.print(i + " ");
             }
         }
