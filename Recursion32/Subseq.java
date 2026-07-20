@@ -3,20 +3,20 @@ package Recursion32;
 import java.util.*;
 
 public class Subseq {
-    public static void subseq(String str, String subStr) {
-        if (str.isEmpty()) {
+    public static void subseq(String str, int idx, String subStr) {
+        if (idx == str.length()) {
             System.out.println(subStr + " ");
             return;
         }
 
-        subseq(str.substring(1), subStr + str.charAt(0));
-        subseq(str.substring(1), subStr);
+        subseq(str, idx + 1, subStr + str.charAt(idx));
+        subseq(str, idx + 1, subStr);
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter the string");
-        subseq(sc.nextLine(), "");
+        subseq(sc.nextLine(), 0, "");
 
         sc.close();
     }
