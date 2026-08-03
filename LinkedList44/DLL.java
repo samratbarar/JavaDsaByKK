@@ -2,7 +2,7 @@ package LinkedList44;
 
 import java.util.*;
 
-class DLL {
+public class DLL {
 
     private Node head;
 
@@ -13,12 +13,6 @@ class DLL {
 
         public Node(int value) {
             this.value = value;
-        }
-
-        public Node(int value, Node next, Node prev) {
-            this.value = value;
-            this.next = next;
-            this.prev = prev;
         }
     }
 
@@ -220,11 +214,5 @@ class DLL {
         deleted.prev = null;
 
         return deleted.value;
-    }
-}
-
-public class DoublyLinkedList {
-    public static void main(String[] args) {
-
     }
 }

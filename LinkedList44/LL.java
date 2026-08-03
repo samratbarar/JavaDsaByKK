@@ -2,7 +2,7 @@ package LinkedList44;
 
 import java.util.*;
 
-class LL {
+public class LL {
 
     private Node head;
     private Node tail;
@@ -168,17 +168,5 @@ class LL {
         size--;
 
         return val;
-    }
-}
-
-public class LinkedListImple {
-    public static void main(String[] args) {
-        LL list = new LL();
-
-        list.insertFirst(7);
-        list.insertFirst(8);
-        list.insertFirst(9);
-
-        list.display();
     }
 }
