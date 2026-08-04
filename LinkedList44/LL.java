@@ -88,6 +88,56 @@ public class LL {
         size++;
     }
 
+    // Insert using recursion
+    // not a standard recursion approach
+    // public void insertRec(int val, int index) {
+    // insertRec(val, index, head);
+    // }
+
+    // public void insertRec(int val, int index, Node temp) {
+    // if (index < 0 || index > size) {
+    // throw new IndexOutOfBoundsException();
+    // }
+
+    // if (index == 0) {
+    // insertFirst(val);
+    // return;
+    // }
+
+    // if (index == size) {
+    // insertLast(val);
+    // return;
+    // }
+
+    // if (index == 1) {
+    // Node node = new Node(val, temp.next);
+    // temp.next = node;
+    // size++;
+    // return;
+    // }
+
+    // insertRec(val, index - 1, temp.next);
+    // }
+
+    public void insertRec(int val, int index) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException();
+        }
+
+        head = insertRec(val, index, head);
+        size++;
+    }
+
+    private Node insertRec(int val, int index, Node node) {
+        if (index == 0) {
+            Node newNode = new Node(val, node);
+            return newNode;
+        }
+
+        node.next = insertRec(val, index - 1, node.next);
+        return node;
+    }
+
     public int deleteFirst() {
         if (head == null) {
             throw new NoSuchElementException();
