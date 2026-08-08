@@ -246,7 +246,7 @@ public class LL {
             prevNode = currNode;
             currNode = nextNode;
 
-            if (nextNode.next != null) {
+            if (nextNode != null) {
                 nextNode = nextNode.next;
             }
         }
