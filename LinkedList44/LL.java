@@ -219,4 +219,34 @@ public class LL {
 
         return val;
     }
+
+    private void reverseRec(Node node) {
+        if (node == tail) {
+            head = tail;
+            return; 
+        }
+
+        reverseRec(node.next);
+        tail.next = node;
+        tail = node;
+        node.next = null;
+    }
+
+    private void reverse(Node node) {
+        Node prevNode = null;
+        Node currNode = head;
+        Node nextNode = head.next;
+
+        while (currNode != null) {
+            currNode.next = prevNode;
+            prevNode = currNode;
+            currNode = nextNode;
+
+            if (nextNode.next != null) {
+                nextNode = nextNode.next;
+            }
+        }
+
+        head = prevNode;
+    }
 }
