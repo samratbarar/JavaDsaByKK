@@ -233,6 +233,10 @@ public class LL {
     }
 
     private void reverse(Node node) {
+        if (size < 2) {
+            return;
+        }
+        
         Node prevNode = null;
         Node currNode = head;
         Node nextNode = head.next;
