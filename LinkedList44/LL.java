@@ -220,6 +220,7 @@ public class LL {
         return val;
     }
 
+    @SuppressWarnings("unused")
     private void reverseRec(Node node) {
         if (node == tail) {
             head = tail;
@@ -232,6 +233,7 @@ public class LL {
         node.next = null;
     }
 
+    @SuppressWarnings("unused")
     private void reverse(Node node) {
         if (size < 2) {
             return;
