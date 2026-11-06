@@ -105,27 +105,55 @@ class BST {
     }
 
     public void BFSearch() {
-        System.out.print(root.value + " ");
-        BFSearch(root, 1, root.height, root.height);
+        if (root == null) {
+            System.out.println("Null tree");
+            return;
+        }
+
+        Queue<Node> childs = new LinkedList<>();
+        childs.add(root);
+        BFSearch(childs);
+
+        System.out.println();
+        
+        childs.add(root);
+        BFSearchLoop(childs);
     }
 
-    private void BFSearch(Node node, int level, int nodeHeight, int height) {
-        if (node == null) {
-            return;
-        }
+    private void BFSearchLoop(Queue<Node> childs) {
+        while (!childs.isEmpty()) {
+            Node node = childs.remove();
 
-        if (level > height) {
-            return;
-        }
+            if (node.left != null) {
+                childs.add(node.left);
+            }
 
-        if ((height - nodeHeight) == level) {
+            if (node.right != null) {
+                childs.add(node.right);
+            }
+
             System.out.print(node.value + " ");
+        }
+    }
+
+    private void BFSearch(Queue<Node> childs) {
+        if (childs.isEmpty()) {
             return;
         }
 
-        BFSearch(node.left, level, node.height, height);
-        BFSearch(node.right, level, node.height, height);
+        Node node = childs.remove();
 
+        if (node.left != null) {
+            childs.add(node.left);
+        }
+
+        if (node.right != null) {
+            childs.add(node.right);
+        }
+
+        System.out.print(node.value + " ");
+
+        BFSearch(childs);
     }
 }
 
