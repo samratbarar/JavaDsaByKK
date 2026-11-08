@@ -104,4 +104,8 @@ public class HeapImp<T extends Comparable<T>> {
             throw new Exception(e);
         }
     }
+
+    public int size() {
+        return list.size();
+    }
 }
